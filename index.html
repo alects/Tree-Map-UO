@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes">
-
+<link rel="shortcut icon" href="favicon.ico" type="x-icon" />
 <html>
 <head>
   <title>Loading the map...</title>
@@ -58,6 +58,18 @@
 
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Prevent Enter Key from doing anything -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(window).keydown(function(event){
+        if(event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+      });
+    });
+  </script>
 
 </head>
 
@@ -72,7 +84,17 @@
       attributionControl: false,
       zoomControl: false,
       scrollWheelZoom: true
-    }).setView([41.76,-72.69], 18); // default center is overridden by Google Sheet options and points
+    }).setMinZoom(15).setView([41.76,-72.69], 18); // default center is overridden by Google Sheet options and points
+  </script>
+  
+  <script>
+    function clickHandler() {
+      var input = L.DomUtil.get('input');
+      var url = 'https://script.google.com/macros/s/AKfycbxVQvmU3NEyUG_CKyejCpGQp2s8vdMYGnbqo3s9B1g/exec';
+      var id = L.DomUtil.get('labelid');
+      request = $.get(url,{data:input.value,id:id.textContent});
+      alert('Refresh the page to see the note.'); 
+    }
   </script>
 
   <script type="text/javascript" src="google-doc-url.js"></script>

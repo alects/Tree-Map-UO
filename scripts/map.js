@@ -70,7 +70,7 @@ $(window).on('load', function() {
     var layerNamesFromSpreadsheet = [];
     var layers = {};
     for (var i in points) {
-      var pointLayerNameFromSpreadsheet = points[i].Group;
+    var pointLayerNameFromSpreadsheet = points[i].Group;
       if (layerNamesFromSpreadsheet.indexOf(pointLayerNameFromSpreadsheet) === -1) {
         markerColors.push(
           points[i]['Marker Icon'].indexOf('.') > 0
@@ -124,11 +124,39 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
-      if (point.Latitude !== '' && point.Longitude !== '') {
+      var template = '<form id="popup-form">\
+        <label>Add Note to Tree </label>\
+        <label id="labelid" for="input">'+point['OBJECTID']+'</label>\
+        <input id="input" class="popup-input" type="text" />\
+        <button onClick="clickHandler()" id="button-submit" type="button">Submit</button>\
+      </form>';
+      
+      if (point.Latitude !== '' && point.Longitude !== ''){
+       var caliper = point['Caliper'];
+       var height = point['Height'];
+       var planted = point['Planted'];
+       var spread = point['Spread'];
+       var description = point['Description'];
+       if(spread!=""){
+         spread = "<br><b>Spread:</b> " + spread + " feet";
+       }
+       if(height!=""){
+         height = "<br><b>Height:</b> " + height + " feet";
+       }
+       if(caliper!=""){
+         caliper = "<br><b>Caliper:</b> " + caliper + " feet";
+       }
+       if(planted!=""){
+         planted = "<br><b>Planted:</b> " + planted;
+       }
+       if(description!=""){
+         description = "<br>" + description+"<br>";
+       }
        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
-          point['Description']);
+          (point['Image'] ? ('<img src="' + point['Image'] + '">') : '') +
+          description + planted + height + spread + caliper +
+          '<br><br>' + template + '<br><b>Notes:</b><br> ' + point['Notes']);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -137,7 +165,7 @@ $(window).on('load', function() {
         markerArray.push(marker);
       }
     }
-
+        
     var group = L.featureGroup(markerArray);
     var clusters = (getSetting('_markercluster') === 'on') ? true : false;
 
@@ -603,7 +631,7 @@ $(window).on('load', function() {
   function onMapDataLoad() {
     var options = mapData.sheets(constants.optionsSheetName).elements;
     createDocumentSettings(options);
-
+    
     createPolygonSettings(mapData.sheets(constants.polygonsSheetName).elements);
     i = 1;
     while (mapData.sheets(constants.polygonsSheetName + i)) {
@@ -611,7 +639,7 @@ $(window).on('load', function() {
       i++;
       polygonSheets++;
     }
-
+    
     document.title = getSetting('_mapTitle');
     addBaseMap();
 
@@ -627,7 +655,7 @@ $(window).on('load', function() {
     }
 
     centerAndZoomMap(group);
-
+    
     // Add polylines
     var polylines = mapData.sheets(constants.polylinesSheetName);
     if (polylines && polylines.elements.length > 0) {
@@ -642,6 +670,7 @@ $(window).on('load', function() {
     } else {
       completePolygons = true;
     }
+    
 
     // Add Nominatim Search control
     if (getSetting('_mapSearch') !== 'off') {
