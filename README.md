@@ -4,7 +4,7 @@ A Leaflet map using Google Sheets as data repo and hosted on GitHub.
 ![Preview](preview.png)
 
 ## Live links
-- Leaflet Map https://NolanCassidy.github.io/Tree-Map-UO
+- Leaflet Map https://NolanCassidy.github.io/UO-Tree-Map
 - Google Sheets https://docs.google.com/spreadsheets/d/1q4BuUA63Eg3Z612C0Uu7ek99Mg2DqnaI4N6F6lyUEKs/edit#gid=0
 
 ## Credits (and licenses)
