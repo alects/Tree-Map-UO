@@ -1,3 +1,11 @@
+/*
+Nolan Cassidy, Zach Domke, Brendon Kieser, Alex Petzold, Cole Sabin
+6/3/2019
+
+The map.js file is what loads the map on the webpage load.
+The onMapDataLoad() function initializes the map.
+The mapPoints() function initializes the points and popups.
+ */
 $(window).on('load', function() {
   var documentSettings = {};
   var markerColors = [];
@@ -118,6 +126,7 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
+      //This template create the button and input box for notes
       var template = '<form id="popup-form">\
         <label>Add Note to Tree </label>\
         <label id="labelid" for="input">'+point['OBJECTID']+'</label>\
@@ -131,6 +140,7 @@ $(window).on('load', function() {
        var planted = point['Planted'];
        var spread = point['Spread'];
        var description = point['Description'];
+       //make sure variables are not blank
        if(spread!=""){
          spread = "<br><b>Spread:</b> " + spread + " feet";
        }
@@ -146,6 +156,8 @@ $(window).on('load', function() {
        if(description!=""){
          description = "<br>" + description+"<br>";
        }
+
+       //add new values to the point popup here
        var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '">') : '') +

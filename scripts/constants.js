@@ -1,3 +1,9 @@
+/*
+Nolan Cassidy, Zach Domke, Brendon Kieser, Alex Petzold, Cole Sabin
+6/3/2019
+
+The constants.js is what helps program know what sheets/values are in the google spreadsheet.
+ */
 var constants = {
   // Tabs in Google Sheet
   notesSheetName: 'Notes',
