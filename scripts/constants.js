@@ -3,8 +3,6 @@ var constants = {
   notesSheetName: 'Notes',
 	optionsSheetName: 'Options',
 	pointsSheetName: 'Points',
-  polygonsSheetName: 'Polygons',
-  polylinesSheetName: 'Polylines',
   /* OPTIONS */
 	// Map Info
   _mapTitle: 'Map Title',
@@ -38,25 +36,4 @@ var constants = {
   _tableHeight: 'Table Height',
   _tableColumns: 'Table Columns',
   _tableHeaderColor: 'Table Header Color',
-  // Polyline Map Controls
-  _polylinesLegendTitle: 'Polyline Legend Title',
-  _polylinesLegendPos: 'Polyline Legend Position',
-  _polylinesLegendIcon: 'Polyline Legend Icon',
-  _polylinesWeight: 'Polyline Thickness',
-	// Polygon Map Display
-	_polygonsLegendTitle: 'Polygon Legend Title',
-	_polygonsLegendPosition: 'Polygon Legend Position',
-  _polygonsLegendIcon: 'Polygon Legend Icon',
-  _polygonsGeojsonURL: 'Polygon GeoJSON URL',
-  _popupProp: 'Property Popups, Labels',
-  _polygonLayers: 'Polygon Properties, Labels',
-  _bucketDivisors: 'Property Ranges',
-	_colorScheme: 'Property Range Color Palette',
-  _colorOpacity: 'Polygon Color Opacity',
-  _outlineColor: 'Polygon Outline Color',
-  _bucketColors: 'Property Range Manual Colors',
-  _polygonDisplayImages: 'Show Images When Available',
-  _polygonLabel: 'Show Polygon Labels',
-  _polygonLabelZoomLevel: 'Show Polygon Labels at Zoom Level',
-  _polygonShowOnStart: 'Show Polygon Data on Start',
 };

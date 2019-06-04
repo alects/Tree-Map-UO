@@ -31,11 +31,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css">
   <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster.js"></script>
 
-  <!-- Mapzen Search
-  <link rel="stylesheet" href="scripts/leaflet-geocoder/leaflet-geocoder-mapzen.css">
-  <script src="scripts/leaflet-geocoder/leaflet-geocoder-mapzen.js"></script>
-   -->
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
   <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
@@ -58,7 +53,7 @@
 
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
+
   <!-- Prevent Enter Key from doing anything -->
   <script type="text/javascript">
     $(document).ready(function() {
@@ -86,21 +81,19 @@
       scrollWheelZoom: true
     }).setMinZoom(15).setView([41.76,-72.69], 18); // default center is overridden by Google Sheet options and points
   </script>
-  
+
   <script>
     function clickHandler() {
       var input = L.DomUtil.get('input');
       var url = 'https://script.google.com/macros/s/AKfycbxVQvmU3NEyUG_CKyejCpGQp2s8vdMYGnbqo3s9B1g/exec';
       var id = L.DomUtil.get('labelid');
       request = $.get(url,{data:input.value,id:id.textContent});
-      alert('Refresh the page to see the note.'); 
+      alert('Refresh the page to see the note.');
     }
   </script>
 
   <script type="text/javascript" src="google-doc-url.js"></script>
   <script type="text/javascript" src="scripts/constants.js"></script>
-  <script type="text/javascript" src="scripts/palette.js"></script>
-  <script type="text/javascript" src="scripts/procsv.js"></script>
   <script type="text/javascript" src="scripts/map.js"></script>
 
 </body>
