@@ -9,6 +9,8 @@ A Leaflet map using Google Sheets as data repo and hosted on GitHub.
 
 ## Credits (and licenses)
 Developed by Nolan Cassidy, Zach Domke, Brendon Kieser, Alex Petzold, Cole Sabin, using Google sheets and these open-source components in addition to the new note module created by the developers mentioned above:
+- Tree data from Ken Kato at the University of Oregon
+- Tree tour description and images from http://tourmaps.uoregon.edu
 - https://github.com/DataVizForAll/leaflet-storymaps-with-google-sheets Developed by Ilya Ilyankou and Jack Dougherty with support from Trinity College CT, using a Google Sheets template (MIT)
 - Inspired by: Code for Atlanta mapsfor.us (2016) https://github.com/codeforatlanta/mapsforus (BSD-3-Clause)
 - Leaflet v1.0.3 https://leafletjs.com (BSD-2-Clause)
