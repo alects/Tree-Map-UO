@@ -1,5 +1,5 @@
 # University of Oregon Tree Map
-A Leaflet map using Google Sheets as data repo and hosted on GitHub.
+A map of the trees on the University of Oregon campus with a built in note function.
 
 ![Preview](preview.png)
 
