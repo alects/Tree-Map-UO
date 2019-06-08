@@ -4,7 +4,7 @@ A map of the trees on the University of Oregon campus with a built in note funct
 ![Preview](preview.png)
 
 ## Live links
-- Leaflet Map https://NolanCassidy.github.io/Tree-Map-UO
+- Leaflet Map https://alects.github.io/Tree-Map-UO
 - Google Sheets https://docs.google.com/spreadsheets/d/1q4BuUA63Eg3Z612C0Uu7ek99Mg2DqnaI4N6F6lyUEKs/edit#gid=0
 
 ## Credits (and licenses)
